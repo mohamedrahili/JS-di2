@@ -23,21 +23,52 @@ class Library {
     }
     
     listBooks() {
+        if (this.books.length === 0) {
+            console.log("No books in the library.");
+        } else {
             this.books.forEach(book => book.showinfo());
+        }
     }
 }
 
-const book1 = new Book("Unlock It", "Dan Lok");
-const book2 = new Book("F.U. Money", "Dan Lok");
-const book3 = new Book("Influence!", "Dan Lok");
+// Book instances
+const book1 = new Book("Unlock It", "Dan Lok", 2019, 240);
+const book2 = new Book("F.U. Money", "Dan Lok", 2014, 210);
+const book3 = new Book("Influence!", "Dan Lok", 2021, 180);
+const book4 = new Book("Think and Grow Rich", "Napoleon Hill", 1937, 238);
 
-const myLibrary = new Library();
+// Initialize Library
+const library = new Library();
+
+// Add books
 console.log("Adding books to the library...");
-myLibrary.addBook(book1);
-myLibrary.addBook(book2);
-myLibrary.addBook(book3);
-myLibrary.listBooks();
+library.addBook(book1);
+library.addBook(book2);
+library.addBook(book3);
+library.addBook(book4);
 
+// List all books
+console.log("\nListing all books in the library:");
+library.listBooks();
+
+// Display information of a single book
+console.log("\nDisplaying information for a single book:");
+book1.showinfo();
+
+// Get book by title
+console.log("\nGetting a book by title:");
+const searchByTitle = library.getBookByTitle("F.U. Money");
+console.log(searchByTitle ? `${searchByTitle.title} found!` : "Book not found.");
+
+// Get books by author
+console.log("\nGetting books by author Dan Lok:");
+const booksByAuthor = library.getBookByAuthor("Dan Lok");
+booksByAuthor.forEach((book) => console.log(`${book.title} by ${book.author}`));
+
+// Remove a book
 console.log("\nRemoving a book from the library...");
-myLibrary.removeBook(book2);  
-myLibrary.listBooks();  
+library.removeBook(book2);
+
+// List all books after removal
+console.log("\nListing all books after removing 'F.U. Money':");
+library.listBooks();
