@@ -1,9 +1,11 @@
 const Book = require('./book');
 
 class Library {
-    constructor(name = "My Library", books = []) {
+    constructor(name = "Library", books = [], pages = 0, year = 0) {
         this.name = name;
         this.books = books;
+        this.pages = pages;
+        this.year = year;
     }
 
     addBook(book) {
@@ -34,7 +36,7 @@ class Library {
 // Book instances
 const book1 = new Book("Unlock It", "Dan Lok", 2019, 240);
 const book2 = new Book("F.U. Money", "Dan Lok", 2014, 210);
-const book3 = new Book("Influence!", "Dan Lok", 2021, 180);
+const book3 = new Book("Influence", "Dan Lok", 2021, 180);
 const book4 = new Book("Think and Grow Rich", "Napoleon Hill", 1937, 238);
 
 // Initialize Library
