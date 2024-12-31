@@ -24,6 +24,14 @@ class Library {
         return this.books.filter((b) => b.author === author);
     }
     
+    getBooksByYear(year) {
+        return this.books.filter((b) => b.year === year);
+    }
+
+    getBooksByPages(pages) {
+        return this.books.filter((b) => b.pages === pages);
+    }
+
     listBooks() {
         if (this.books.length === 0) {
             console.log("No books in the library.");
@@ -66,6 +74,16 @@ console.log(searchByTitle ? `${searchByTitle.title} found!` : "Book not found.")
 console.log("\nGetting books by author Dan Lok:");
 const booksByAuthor = library.getBookByAuthor("Dan Lok");
 booksByAuthor.forEach((book) => console.log(`${book.title} by ${book.author}`));
+
+// Get bokks by year
+console.log("\nGetting books by year 2014:");
+const booksByYear = library.getBooksByYear(2014);
+booksByYear.forEach((book) => console.log(`${book.title} by ${book.author}`));
+
+// Get books by page 
+console.log("\nGetting books by page 240:");
+const booksByPage = library.getBooksByPages(240);
+booksByPage.forEach((book) => console.log(`${book.title} by ${book.author}`));
 
 // Remove a book
 console.log("\nRemoving a book from the library...");
