@@ -1,9 +1,9 @@
 class Book {
-    constructor(title, author, pages, year) {
+    constructor(title, author, year, pages) {
         this.title = title;
         this.author = author;
-        this.pages = pages;
         this.year = year;
+        this.pages = pages;
     }
     showinfo() {
         console.log(`The book named ${this.title} comme with ${this.pages} page was written by the author ${this.author} in ${this.year}`);

@@ -1,11 +1,11 @@
 const Book = require('./book');
 
 class Library {
-    constructor(name = "Library", books = [], pages = 0, year = 0) {
+    constructor(name = "Library", books = [], year = 0, pages = 0) {
         this.name = name;
         this.books = books;
-        this.pages = pages;
         this.year = year;
+        this.pages = pages;
     }
 
     addBook(book) {
@@ -46,6 +46,12 @@ const book1 = new Book("Unlock It", "Dan Lok", 2019, 240);
 const book2 = new Book("F.U. Money", "Dan Lok", 2014, 210);
 const book3 = new Book("Influence", "Dan Lok", 2021, 180);
 const book4 = new Book("Think and Grow Rich", "Napoleon Hill", 1937, 238);
+const book5 = new Book("The 7 Habits of Highly Effective People", "Stephen R. Covey", 1989, 381);
+const book6 = new Book("How to Win Friends and Influence People", "Dale Carnegie", 1936, 291);
+const book7 = new Book("Rich Dad Poor Dad", "Robert T. Kiyosaki", 1997, 207);
+const book8 = new Book("The Lean Startup", "Eric Ries", 2011, 336);
+const book9 = new Book("Atomic Habits", "James Clear", 2018, 320);
+const book10 = new Book("The E-Myth Revisited", "Michael E. Gerber", 1995, 288);
 
 // Initialize Library
 const library = new Library();
@@ -56,6 +62,12 @@ library.addBook(book1);
 library.addBook(book2);
 library.addBook(book3);
 library.addBook(book4);
+library.addBook(book5);
+library.addBook(book6);
+library.addBook(book7);
+library.addBook(book8);
+library.addBook(book9);
+library.addBook(book10);
 
 // List all books
 console.log("\nListing all books in the library:");
