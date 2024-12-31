@@ -17,7 +17,7 @@ class Library {
     }
 
     getBookByTitle(title) {
-        return this.books.find((b) => b.title === title);
+        return this.books.filter((b) => b.title === title);
     }
 
     getBookByAuthor(author) {
@@ -79,8 +79,8 @@ book1.showinfo();
 
 // Get book by title
 console.log("\nGetting a book by title:");
-const searchByTitle = library.getBookByTitle("F.U. Money");
-console.log(searchByTitle ? `${searchByTitle.title} found!` : "Book not found.");
+const booksByTitle = library.getBookByTitle("F.U. Money");
+booksByTitle.forEach((book) => console.log(`${book.title} by ${book.author}`));
 
 // Get books by author
 console.log("\nGetting books by author Dan Lok:");
@@ -101,6 +101,6 @@ booksByPage.forEach((book) => console.log(`${book.title} by ${book.author}`));
 console.log("\nRemoving a book from the library...");
 library.removeBook(book2);
 
-// List all books after removal
+// List all books after removing a book
 console.log("\nListing all books after removing 'F.U. Money':");
 library.listBooks();
