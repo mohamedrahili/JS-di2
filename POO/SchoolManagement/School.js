@@ -86,7 +86,7 @@ const teacher6 = new teacher("Chifaa", 6, 35, "UML");
 const mySchool = new School;
 
 console.log("Adding New Student:");
-mySchool.addsTudent(student1); // Note the method name change
+mySchool.addsTudent(student1); 
 mySchool.addsTudent(student2);
 mySchool.addsTudent(student3);
 mySchool.addsTudent(student4);
